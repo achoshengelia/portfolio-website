@@ -49,8 +49,8 @@ const Timeline = () => {
 					I started my journey to become a web developer at the end of 2020.
 					Since I discovered coding, it has become my new passion and
 					professional interest. For me, having enthusiasm and joy are crucial
-					factors when choosing a line of work. Developing apps for the web sure
-					satisfy my needs
+					factors when choosing a line of work. Developing apps for the web do
+					satisfy my demands.
 				</SectionText>
 				<Container>
 					{TimeLineData.map((data, i) => (
