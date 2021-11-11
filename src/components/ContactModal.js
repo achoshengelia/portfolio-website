@@ -40,7 +40,10 @@ const Form = styled.form`
 	border-radius: 1em;
 	background-color: #e9ecef;
 	padding: 2em;
-	gap: 2em;
+	/* gap: 2em; */
+	& > * + *:not(:last-child) {
+		margin-bottom: 2em;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		width: 93%;
 	}
@@ -50,14 +53,24 @@ const InpContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 20%;
-	gap: 1.3em;
+	/* gap: 1.3em; */
+	& > * + * {
+		margin-top: 1.3em;
+	}
 `;
 
 const NameEmail = styled.div`
 	display: flex;
-	gap: 1.4em;
+	/* gap: 1.4em; */
+	& > * + * {
+		margin-left: 1.4em;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		flex-direction: column;
+		& > * + * {
+			margin-left: 0;
+			margin-top: 1.4em;
+		}
 	}
 `;
 
@@ -195,7 +208,10 @@ const Response = styled.div`
 	border-radius: 1em;
 	background-color: #e9ecef;
 	padding: 2em;
-	gap: 2em;
+	/* gap: 2em; */
+	& > * + * {
+		margin-top: 2em;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		width: 93%;
 	}

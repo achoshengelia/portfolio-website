@@ -20,10 +20,12 @@ const StyledFooter = styled.footer`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 2.6em;
+	/* gap: 2.6em; */
+	& > * + * {
+		margin-top: 2.6em;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		padding: 3em 0;
-		/* gap: 1em; */
 	}
 `;
 
@@ -36,12 +38,18 @@ const SocialsRow = styled.div`
 	justify-content: space-between;
 	@media ${(props) => props.theme.breakpoints.sm} {
 		flex-direction: column;
-		gap: 2em;
+		/* gap: 2em; */
+		& > * + * {
+			margin-top: 2em;
+		}
 	}
 `;
 const Socials = styled.div`
 	display: flex;
-	gap: 1em;
+	/* gap: 1em; */
+	& > * + * {
+		margin-left: 1em;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		align-self: center;
 	}
@@ -77,14 +85,20 @@ const LegalRow = styled.div`
 	justify-content: space-between;
 	@media ${(props) => props.theme.breakpoints.sm} {
 		flex-direction: column;
-		gap: 2em;
+		/* gap: 2em; */
+		& > * + * {
+			margin-top: 2em;
+		}
 		align-items: center;
 	}
 `;
 const BackToTop = styled.a`
 	display: flex;
 
-	gap: 0.5em;
+	/* gap: 0.5em; */
+	& > * {
+		margin-left: 0.5em;
+	}
 	&:hover span {
 		transform: translateY(-15%);
 	}
@@ -98,9 +112,15 @@ const ArrowContainer = styled.span`
 `;
 const Copyright = styled.div`
 	display: flex;
-	gap: 0.6em;
+	/* gap: 0.6em; */
+	& > * {
+		margin-left: 0.6em;
+	}
 	@media screen and (max-width: 375px) {
-		gap: 0;
+		/* gap: 0; */
+		& > * {
+			margin-left: 0;
+		}
 	}
 `;
 

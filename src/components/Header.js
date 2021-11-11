@@ -27,16 +27,16 @@ const Container = styled.nav`
 	}
 `;
 const Div1 = styled.div`
-	grid-area: 1 / 1 / 2 / 2;
+	/* grid-area: 1 / 1 / 2 / 2; */
 	display: flex;
 	/* flex-direction: row; */
 	align-content: center;
-	gap: 3em;
+	/* gap: 3em; */
+	& > * + * {
+		margin-left: 3em;
+	}
 	@media screen and (max-width: 1290px) {
 		width: max-content;
-	}
-	@media ${(props) => props.theme.breakpoints.sm} {
-		grid-area: 1 / 1 / 2 / 3;
 	}
 	@media ${(props) => props.theme.breakpoints.md} {
 		display: none;
@@ -62,7 +62,10 @@ const Div3 = styled.div`
 	justify-content: space-evenly;
 	align-items: center;
 	@media screen and (max-width: 1290px) {
-		gap: 1.5em;
+		/* gap: 1.5em; */
+		& > * + * {
+			margin-left: 1.5em;
+		}
 	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		align-items: center;
@@ -189,7 +192,10 @@ const SideBar = styled.nav`
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 2em;
+		/* gap: 2em; */
+		& > * + * {
+			margin-top: 2em;
+		}
 		top: 0;
 		left: 0;
 		background: #212529;
@@ -238,7 +244,7 @@ const Header = () => {
 							</Link>
 						</li>
 					</Div1>
-					<Div2></Div2>
+					{/* <Div2></Div2> */}
 					<Div3>
 						<SocialIcons
 							href="https://www.linkedin.com/in/achidev/"
