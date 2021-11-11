@@ -127,7 +127,7 @@ const Button = styled.button`
 	transition: 0.5s ease;
 	position: relative;
 	pointer-events: ${({ isEnabled }) => (isEnabled ? 'on' : 'none')};
-	color: ${({ isEnabled }) => (isEnabled ? '' : '#ADB5BD')};
+	color: ${({ isEnabled }) => (isEnabled ? '#212529' : '#ADB5BD')};
 	&::after {
 		content: '';
 		position: absolute;

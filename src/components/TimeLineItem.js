@@ -73,6 +73,9 @@ const Container = styled.div`
 			margin: 0;
 			max-width: max-content;
 			text-align: left;
+			&:not(:first-child) {
+				margin-left: 3em;
+			}
 			&::after {
 				content: none;
 			}

@@ -12,7 +12,11 @@ const Container = styled.div`
 	/* grid-template-rows: repeat(4, 1fr); */
 	/* grid-column-gap: 0px;
 	grid-row-gap: 0px; */
-	gap: 5em;
+	/* gap: 5em; */
+	& > * + * {
+		margin-top: 5em;
+	}
+
 	&::after {
 		content: '';
 		position: absolute;
@@ -30,7 +34,7 @@ const Container = styled.div`
 		display: flex;
 		overflow: auto;
 		min-height: 12rem;
-		gap: 3em;
+		/* gap: 3em; */
 		padding: 0 2em;
 		/* white-space: nowrap; */
 	}
