@@ -13,6 +13,7 @@ const Container = styled.div`
 	/* grid-column-gap: 0px;
 	grid-row-gap: 0px; */
 	/* gap: 5em; */
+	padding-bottom: 3em;
 	& > * + * {
 		margin-top: 5em;
 	}
@@ -49,8 +50,8 @@ const Timeline = () => {
 					I started my journey to become a web developer at the end of 2020.
 					Since I discovered coding, it has become my new passion and
 					professional interest. For me, having enthusiasm and joy are crucial
-					factors when choosing a line of work. Developing apps for the web do
-					satisfy my demands.
+					factors when choosing a line of work, which is why I decided on this
+					field.
 				</SectionText>
 				<Container>
 					{TimeLineData.map((data, i) => (

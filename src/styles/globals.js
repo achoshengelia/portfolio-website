@@ -9,6 +9,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: inherit;
   }
+  *::selection{
+    background: ${(props) => props.theme.colors.primaryPink};
+  }
   html {
     font-size: 62.5%;
     scroll-behavior: smooth;
