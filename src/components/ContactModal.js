@@ -256,7 +256,7 @@ const EmailForm = ({ closeModalHandler }) => {
 			setIsEnabled(false);
 			emailjs
 				.sendForm(
-					'service_qdmn6hm',
+					'service_ocmdipb',
 					'template_68z4s9g',
 					form.current,
 					'user_gyFx0vdAAgOJ0hrz4Lmw6'
