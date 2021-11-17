@@ -194,7 +194,7 @@ const ResponseIcon = styled.div`
 `;
 
 const Response = styled.div`
-	position: relative;
+	position: fixed;
 	z-index: 100;
 	display: flex;
 	color: #212529;
