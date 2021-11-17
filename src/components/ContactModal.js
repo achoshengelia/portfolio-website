@@ -246,9 +246,8 @@ const EmailForm = ({ closeModalHandler }) => {
 	const [success, setSuccess] = useState(true);
 	const [isEnabled, setIsEnabled] = useState(true);
 	const form = useRef();
-
 	const sendEmail = (e) => {
-		if (errors.name === '' && errors.email === '' && errors.message === '') {
+		if (values.name === '' || values.email === '' || values.message === '') {
 			e.preventDefault();
 			setErrors(validateInfo(values));
 		} else if (Object.keys(errors).length === 0) {
@@ -319,8 +318,6 @@ const EmailForm = ({ closeModalHandler }) => {
 									id="email"
 									value={values.email}
 									onChange={handleChange}
-
-									// placeholder={errors.email}
 								/>
 								{errors.email && (
 									<ErrorMessage>
@@ -337,8 +334,6 @@ const EmailForm = ({ closeModalHandler }) => {
 								id="message"
 								value={values.message}
 								onChange={handleChange}
-
-								// placeholder={errors.message}
 							/>
 							{errors.message && (
 								<ErrorMessage>

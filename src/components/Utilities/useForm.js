@@ -7,10 +7,10 @@ const useForm = () => {
 		email: '',
 		message: '',
 	});
-	const [errors, setErrors] = useState({ name: '', email: '', message: '' });
-
+	const [errors, setErrors] = useState({});
 	const handleChange = (e) => {
 		const { name, value } = e.target;
+
 		setValues({
 			...values,
 			[name]: value,
