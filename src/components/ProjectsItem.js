@@ -29,7 +29,8 @@ const BlogCard = styled.div`
 	}
 	@media ${(props) => props.theme.breakpoints.sm} {
 		width: 80%;
-		/* margin-left: 1.5em; */
+		/* justify-self: start; */
+		margin-right: 3rem;
 	}
 	@media screen and (max-width: 375px) {
 		min-height: 260px;

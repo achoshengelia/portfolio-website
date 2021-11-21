@@ -52,14 +52,14 @@ const TypeWriter = styled.h1`
 
 	@media ${(props) => props.theme.breakpoints.md} {
 		margin-bottom: 1.2rem;
-		margin-top: 12rem;
+		margin-top: 18rem;
 		padding: ${(props) => (props.main ? '40px 0 12px' : '0')};
 	}
 
 	@media ${(props) => props.theme.breakpoints.sm} {
 		font-size: 4rem;
 		margin-bottom: 0.8rem;
-		margin-top: 4rem;
+		margin-top: 8rem;
 		margin-left: 3rem;
 		width: 80%;
 	}
