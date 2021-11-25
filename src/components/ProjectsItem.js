@@ -19,7 +19,8 @@ const BlogCard = styled.div`
 	box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.2);
 	text-align: center;
 	width: 100%;
-	min-height: 360px;
+	min-height: 30rem;
+
 	/* max-height: ${({ expand }) => (expand ? '75rem' : '35rem')};
 	transition: 1s; */
 	cursor: pointer;
@@ -107,6 +108,12 @@ const TagList = styled.ul`
 	display: flex;
 	justify-content: space-around;
 	padding: 2rem;
+	@media ${(props) => props.theme.breakpoints.sm} {
+		flex-direction: column;
+		& > *:not(:last-child) {
+			margin-bottom: 0.5em;
+		}
+	}
 `;
 const Tag = styled.li`
 	/* color: #f9c9d7; */
@@ -116,6 +123,14 @@ const Stack = styled.h4`
 	margin-top: 1.5em;
 	margin-bottom: 0.7em;
 	font-weight: 500;
+	@media ${(props) => props.theme.breakpoints.sm} {
+		margin-bottom: 0;
+	}
+`;
+
+const Maximum = styled.div`
+	max-height: 40rem;
+	overflow-y: scroll;
 `;
 
 const ProjectsItem = ({ data }) => {
@@ -130,7 +145,7 @@ const ProjectsItem = ({ data }) => {
 			</TitleContent>
 			<Hr />
 			{expand && (
-				<React.Fragment>
+				<Maximum>
 					<CardInfo>{data.description}</CardInfo>
 					<Stack>Stack</Stack>
 					<TagList>
@@ -146,7 +161,7 @@ const ProjectsItem = ({ data }) => {
 							Code
 						</ExternalLinks>
 					</UtilityList>
-				</React.Fragment>
+				</Maximum>
 			)}
 		</BlogCard>
 	);
