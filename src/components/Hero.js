@@ -9,7 +9,9 @@ import useWindowDimensions from './Utilities/useWindow';
 const TypeWriter = styled.h1`
 	position: relative;
 	font-weight: 800;
-	font-size: 5.4rem;
+	/* font-size: 5.4rem; */
+	/* font-size: clamp(3rem, 1.15rem + 3.65vw, 5.4rem); */
+	font-size: clamp(3rem, 1.29rem + 3.03vw, 5.4rem);
 	margin-top: 20rem;
 	max-width: 100%;
 	@keyframes typewriter {
@@ -23,7 +25,7 @@ const TypeWriter = styled.h1`
 			background: transparent;
 		}
 	}
-	@media screen and (min-width: 935px) {
+	@media screen and (min-width: 810px) {
 		&::before,
 		&::after {
 			content: '';
@@ -34,30 +36,30 @@ const TypeWriter = styled.h1`
 			left: 0;
 		}
 		&::before {
-			background: ${(props) => props.theme.colors.background1};
+			background: ${props => props.theme.colors.background1};
 			animation: typewriter 3s 1s steps(39) forwards;
 		}
 		&::after {
-			background-color: ${(props) => props.theme.colors.primaryPink};
+			background-color: ${props => props.theme.colors.primaryPink};
 			animation: typewriter 3s 1s steps(39) forwards,
 				blink 0.7s steps(39) infinite;
 			width: 0.1em;
 		}
 	}
 
-	@media ${(props) => props.theme.breakpoints.lg} {
-		font-size: 4.4rem;
+	@media ${props => props.theme.breakpoints.lg} {
+		/* font-size: 4.4rem; */
 		margin-bottom: 1.5em;
 	}
 
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		margin-bottom: 1.2rem;
 		margin-top: 18rem;
-		padding: ${(props) => (props.main ? '40px 0 12px' : '0')};
+		padding: ${props => (props.main ? '40px 0 12px' : '0')};
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 4rem;
+	@media ${props => props.theme.breakpoints.sm} {
+		/* font-size: 4rem; */
 		margin-bottom: 0.8rem;
 		margin-top: 8rem;
 		margin-left: 3rem;
@@ -67,11 +69,12 @@ const TypeWriter = styled.h1`
 
 const SectionText = styled.p`
 	max-width: 1000px;
-	font-size: 2.7rem;
+	/* font-size: 2.7rem; */
+	font-size: clamp(2.1rem, 0.73rem + 1.34vw, 2.7rem);
 	line-height: 40px;
 	font-weight: 300;
 	margin: 0.5rem 0rem 5rem;
-	@media screen and (min-width: 935px) {
+	@media screen and (min-width: 810px) {
 		opacity: 0;
 		transform: translateY(3rem);
 		animation: fadeInUp 2s 5s forwards;
@@ -83,21 +86,21 @@ const SectionText = styled.p`
 		}
 	}
 
-	@media ${(props) => props.theme.breakpoints.lg} {
-		font-size: 2.4rem;
+	@media ${props => props.theme.breakpoints.lg} {
+		/* font-size: 2.4rem; */
 		transform: translateY(-40%);
 	}
 
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		max-width: 670px;
-		font-size: 20px;
+		/* font-size: 20px; */
 		line-height: 3.2rem;
 		padding-bottom: 24px;
 		transform: translateY(20%);
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 2.2rem;
+	@media ${props => props.theme.breakpoints.sm} {
+		/* font-size: 2.2rem; */
 		line-height: 2.4rem;
 		margin: 2rem 3rem;
 		padding-bottom: 16px;
@@ -105,30 +108,30 @@ const SectionText = styled.p`
 `;
 
 const BtnContainer = styled.div`
-	@media ${(props) => props.theme.breakpoints.lg} {
+	@media ${props => props.theme.breakpoints.lg} {
 		transform: translateY(-40%);
 	}
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		transform: translateY(10%);
 		font-size: 10rem;
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		margin-top: 5rem;
 		margin-right: 10rem;
 		margin-left: 3rem;
 	}
 `;
 
-const Hero = (props) => {
+const Hero = props => {
 	const [showModal, setShowModal] = useState(false);
 	const showModalHandler = () => {
-		setShowModal((prevState) => !prevState);
+		setShowModal(prevState => !prevState);
 		const body = document.getElementById('body');
 		body.style.minHeight = '100vh';
 		body.style.overflow = 'hidden';
 	};
-	const closeModalHandler = (isClosed) => {
+	const closeModalHandler = isClosed => {
 		setShowModal(isClosed);
 		const body = document.getElementById('body');
 		body.style.height = 'auto';
@@ -150,7 +153,7 @@ const Hero = (props) => {
 	return (
 		<Section fullScreen nomargin>
 			{showModal && (
-				<Portal selector="#contactmodal">
+				<Portal selector='#contactmodal'>
 					<EmailForm closeModalHandler={closeModalHandler} />
 				</Portal>
 			)}

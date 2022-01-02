@@ -9,16 +9,16 @@ const List = styled.ul`
 	grid-template-columns: repeat(2, 1fr);
 	margin: 3rem 0;
 
-	@media ${(props) => props.theme.breakpoints.lg} {
+	@media ${props => props.theme.breakpoints.lg} {
 		margin: 64px 0;
 	}
 
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		margin: 64px 0;
 		gap: 24px;
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		display: flex;
 		flex-direction: column;
 		margin: 32px 0;
@@ -29,7 +29,7 @@ const ListContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		display: flex;
 		margin-left: 18px;
 	}
@@ -37,18 +37,19 @@ const ListContainer = styled.div`
 
 const ListTitle = styled.h3`
 	font-weight: 700;
-	font-size: 28px;
+	/* font-size: 28px; */
+	font-size: clamp(2rem, 0.73rem + 1.34vw, 2.8rem);
 	line-height: 32px;
 	letter-spacing: 0.02em;
 	margin-bottom: 8px;
 
-	@media ${(props) => props.theme.breakpoints.md} {
-		font-size: 24px;
+	@media ${props => props.theme.breakpoints.md} {
+		/* font-size: 24px; */
 		line-height: 28px;
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 20px;
+	@media ${props => props.theme.breakpoints.sm} {
+		/* font-size: 20px; */
 		line-height: 28px;
 		letter-spacing: 0.02em;
 		margin-bottom: 4px;
@@ -56,16 +57,16 @@ const ListTitle = styled.h3`
 `;
 
 const ListParagraph = styled.p`
-	font-size: 18px;
+	/* font-size: 18px; */
 	line-height: 30px;
-
-	@media ${(props) => props.theme.breakpoints.md} {
-		font-size: 16px;
+	font-size: clamp(1.4rem, 0.73rem + 1.34vw, 1.8rem);
+	@media ${props => props.theme.breakpoints.md} {
+		/* font-size: 16px; */
 		line-height: 28px;
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 14px;
+	@media ${props => props.theme.breakpoints.sm} {
+		/* font-size: 14px; */
 		line-height: 22px;
 		width: 90%;
 	}
@@ -76,11 +77,11 @@ const ListItem = styled.li`
 	display: flex;
 	flex-direction: column;
 
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		max-width: 203px;
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		margin-bottom: 14px;
 		max-width: 320px;
 		flex-direction: row;
@@ -93,7 +94,7 @@ const IconWrapper = styled.div`
 	animation: loader 4s infinite forwards;
 	width: max-content;
 	& svg {
-		fill: ${(props) => props.theme.colors.primaryPink};
+		fill: ${props => props.theme.colors.primaryPink};
 	}
 	@keyframes loader {
 		0% {
@@ -119,7 +120,7 @@ const IconWrapper = styled.div`
 `;
 
 const Technologies = () => (
-	<Section id="tech">
+	<Section id='tech'>
 		<SectionTitle main>Technologies</SectionTitle>
 		<SectionText main>
 			My aim is to specialise in frontend, namely React. However, I still have a
@@ -130,7 +131,7 @@ const Technologies = () => (
 			<ListItem>
 				<ListContainer>
 					<IconWrapper>
-						<DiReact size="6rem" />
+						<DiReact size='6rem' />
 					</IconWrapper>
 					<ListTitle>Front-End</ListTitle>
 					<ListParagraph>
@@ -142,7 +143,7 @@ const Technologies = () => (
 			<ListItem>
 				<ListContainer>
 					<IconWrapper>
-						<DiFirebase size="6rem" />
+						<DiFirebase size='6rem' />
 					</IconWrapper>
 					<ListTitle>Back-End</ListTitle>
 					<ListParagraph>

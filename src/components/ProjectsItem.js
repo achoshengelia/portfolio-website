@@ -6,7 +6,7 @@ const Hr = styled.hr`
 	height: 3px;
 	margin: 20px auto;
 	border: 0;
-	background: ${(props) => props.theme.colors.primaryPink};
+	background: ${props => props.theme.colors.primaryPink};
 `;
 const Img = styled.img`
 	width: 100%;
@@ -28,7 +28,7 @@ const BlogCard = styled.div`
 		transform: scale(1.005);
 		box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.4);
 	}
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		width: 80%;
 		/* justify-self: start; */
 		margin-right: 3rem;
@@ -57,9 +57,9 @@ const HeaderThree = styled.h3`
 	font-weight: 500;
 	letter-spacing: 2px;
 	padding: 0.5rem 0;
-	/* font-size: ${(props) => (props.title ? '3rem' : '2rem')}; */
+	/* font-size: ${props => (props.title ? '3rem' : '2rem')}; */
 	font-size: 3rem;
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		font-size: 2.5rem;
 	}
 	@media screen and (max-width: 320px) {
@@ -70,7 +70,7 @@ const CardInfo = styled.p`
 	padding: 0 2.3em;
 	line-height: 24px;
 	text-align: left;
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		padding: 3rem;
 	}
 `;
@@ -84,13 +84,13 @@ const UtilityList = styled.ul`
 const ExternalLinks = styled.a`
 	font-size: 1.6rem;
 	padding: 0.7rem 2rem;
-	border: 2px solid ${(props) => props.theme.colors.primaryPink};
+	border: 2px solid ${props => props.theme.colors.primaryPink};
 	transition: 0.3s;
 	position: relative;
 	&::after {
 		content: '';
 		position: absolute;
-		background: ${(props) => props.theme.colors.primaryPink};
+		background: ${props => props.theme.colors.primaryPink};
 		width: 0%;
 		height: 100%;
 		bottom: 0;
@@ -108,7 +108,7 @@ const TagList = styled.ul`
 	display: flex;
 	justify-content: space-around;
 	padding: 2rem;
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		flex-direction: column;
 		& > *:not(:last-child) {
 			margin-bottom: 0.5em;
@@ -123,19 +123,19 @@ const Stack = styled.h4`
 	margin-top: 1.5em;
 	margin-bottom: 0.7em;
 	font-weight: 500;
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		margin-bottom: 0;
 	}
 `;
 
 const Maximum = styled.div`
-	max-height: 40rem;
-	overflow-y: scroll;
+	/* max-height: 50rem; */
+	/* overflow-y: scroll; */
 `;
 
 const ProjectsItem = ({ data }) => {
 	const [expand, setExpand] = useState(false);
-	const expandHandler = () => setExpand((prevState) => !prevState);
+	const expandHandler = () => setExpand(prevState => !prevState);
 
 	return (
 		<BlogCard onClick={expandHandler} expand={expand}>
@@ -154,10 +154,10 @@ const ProjectsItem = ({ data }) => {
 						))}
 					</TagList>
 					<UtilityList>
-						<ExternalLinks href={data.source} target="_blank">
+						<ExternalLinks href={data.source} target='_blank'>
 							Live
 						</ExternalLinks>
-						<ExternalLinks href={data.visit} target="_blank">
+						<ExternalLinks href={data.visit} target='_blank'>
 							Code
 						</ExternalLinks>
 					</UtilityList>

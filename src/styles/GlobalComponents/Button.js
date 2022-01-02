@@ -9,7 +9,7 @@ const StyledButton = styled.button`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 4px solid ${(props) => props.theme.colors.primaryPink};
+	border: 4px solid ${props => props.theme.colors.primaryPink};
 	cursor: pointer;
 	transition: 0.5s ease;
 	position: relative;
@@ -22,7 +22,7 @@ const StyledButton = styled.button`
 		position: absolute;
 		width: 100%;
 		height: 0;
-		background: ${(props) => props.theme.colors.primaryPink};
+		background: ${props => props.theme.colors.primaryPink};
 		transition: all 0.23s ease-in-out;
 		top: -0.3rem;
 		left: 0;
@@ -35,11 +35,11 @@ const StyledButton = styled.button`
 		}
 	}
 
-	@media screen and (min-width: 935px) {
-		margin-left: ${(props) => (props.fadeInRight ? '-4rem' : '0')};
-		opacity: ${(props) => (props.fadeInRight ? '0' : '1')};
-		transform: ${(props) => (props.fadeInRight ? 'translateX(-5rem)' : '')};
-		animation: ${(props) => (props.fadeInRight ? `fadeInRight` : '')} 2s 5s
+	@media screen and (min-width: 810px) {
+		margin-left: ${props => (props.fadeInRight ? '-4rem' : '0')};
+		opacity: ${props => (props.fadeInRight ? '0' : '1')};
+		transform: ${props => (props.fadeInRight ? 'translateX(-5rem)' : '')};
+		animation: ${props => (props.fadeInRight ? `fadeInRight` : '')} 2s 5s
 			forwards;
 		@keyframes fadeInRight {
 			to {
@@ -49,14 +49,14 @@ const StyledButton = styled.button`
 		}
 	}
 
-	@media ${(props) => props.theme.breakpoints.md} {
+	@media ${props => props.theme.breakpoints.md} {
 		height: ${({ alt }) => (alt ? '52px' : '4.8rem')};
 		font-size: 1.9rem;
 		margin-bottom: ${({ alt }) => (alt ? '0' : '6.4rem')};
 		/* margin-top: -1.5rem; */
 	}
 
-	@media ${(props) => props.theme.breakpoints.sm} {
+	@media ${props => props.theme.breakpoints.sm} {
 		width: ${({ alt }) => (alt ? '100%' : '')};
 		font-size: 2rem;
 		/* width: 12em;
@@ -69,14 +69,13 @@ const StyledButton = styled.button`
 	}
 `;
 
-const Button = (props) => (
+const Button = props => (
 	<StyledButton
 		alt={props.alt}
 		form={props.form}
 		disabled={props.disabled}
 		fadeInRight={props.fadeInRight}
-		pink={props.pink}
-	>
+		pink={props.pink}>
 		{props.children}
 	</StyledButton>
 );
